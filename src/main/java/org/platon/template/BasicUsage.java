@@ -1,15 +1,18 @@
 package org.platon.template;
 
+import ai.platon.pulsar.browser.common.BrowserSettings;
 import ai.platon.pulsar.context.PulsarContexts;
 import ai.platon.pulsar.persist.WebPage;
 import com.google.gson.Gson;
 
 import java.util.Arrays;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class BasicUsage {
     public static void main(String[] args) {
+        // browser settings
+        BrowserSettings.privacyContext(2).maxTabs(8).withGUI();
+
         // create a pulsar session
         var session = PulsarContexts.createSession();
         // the main url we are playing with

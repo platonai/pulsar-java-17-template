@@ -1,5 +1,6 @@
 package org.platon.template;
 
+import ai.platon.pulsar.browser.common.BrowserSettings;
 import ai.platon.pulsar.common.LinkExtractors;
 import ai.platon.pulsar.common.urls.Hyperlink;
 import ai.platon.pulsar.context.PulsarContext;
@@ -25,6 +26,9 @@ public class ContinuousCrawler {
     }
 
     public static void main(String[] args) {
+        // browser settings
+        BrowserSettings.privacyContext(2).maxTabs(8).headless();
+
         var urls = LinkExtractors.fromResource("seeds10.txt")
                 .stream()
                 .map(seed -> new ParsableHyperlink(seed, ContinuousCrawler::onParse))
