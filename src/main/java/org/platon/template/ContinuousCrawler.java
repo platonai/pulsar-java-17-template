@@ -28,7 +28,7 @@ public class ContinuousCrawler {
         var urls = LinkExtractors.fromResource("seeds10.txt")
                 .stream()
                 .map(seed -> new ParsableHyperlink(seed, ContinuousCrawler::onParse))
-                .collect(Collectors.toList());
+                .toList();
         var context = PulsarContexts.create();
         // feel free to submit millions of urls here
         // ...

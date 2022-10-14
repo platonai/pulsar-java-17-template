@@ -45,7 +45,7 @@ public class BasicUsage {
         document.selectFirstOptional("title").ifPresent(System.out::println);
 
         System.out.println("== pages");
-        System.out.println(pages.stream().map(WebPage::getUrl).collect(Collectors.toList()));
+        System.out.println(pages.stream().map(WebPage::getUrl).toList());
 
         var gson = new Gson();
         System.out.println("== fields");
