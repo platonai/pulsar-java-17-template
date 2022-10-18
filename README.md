@@ -1,3 +1,3 @@
 # README
 
-A template project to use PulsarR as a library.
+This is a template project for you to used PulsarR as a library using java 17.

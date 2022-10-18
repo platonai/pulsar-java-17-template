@@ -47,10 +47,7 @@ class CrawlAsync {
         var session = PulsarContexts.createSession();
 
         var futures = session.loadAllAsync(LinkExtractors.fromResource("seeds10.txt")).stream()
-                .map(f -> f.thenApply(session::parse)
-                        .thenApply(FeaturedDocument::guessTitle)
-                        .thenAccept(System.out::println)
-                )
+                .map(f -> f.thenApply(session::parse).thenApply(FeaturedDocument::guessTitle).thenAccept(System.out::println))
                 .toArray(CompletableFuture<?>[]::new);
 
         CompletableFuture.allOf(futures).join();
