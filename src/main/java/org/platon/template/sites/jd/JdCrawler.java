@@ -1,4 +1,4 @@
-package org.platon.template.jd;
+package org.platon.template.sites.jd;
 
 import ai.platon.pulsar.context.PulsarContexts;
 import ai.platon.pulsar.session.PulsarSession;
